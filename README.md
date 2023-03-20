@@ -47,6 +47,23 @@
       }
     );
 }
+
+Alternatively, you can generate a matrix from an attribute set:
+
+```nix
+{
+# ...
+  outputs = {
+    # ...
+        //
+        (ci.lib.genShellsFromMatrixAttrs { goVersion = [ "1_19" "1_20" ]; } (e:
+          devShells.default.overrideAttrs (final: prev: {
+            buildInputs = [ pkgs."go_${e.goVersion}" ] ++ prev.buildInputs;
+          })
+        ));
+  };
+}
+```
 ```
 
 ## License
