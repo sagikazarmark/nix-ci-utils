@@ -47,6 +47,7 @@
       }
     );
 }
+```
 
 Alternatively, you can generate a matrix from an attribute set:
 
@@ -63,7 +64,6 @@ Alternatively, you can generate a matrix from an attribute set:
         ));
   };
 }
-```
 ```
 
 ## License
